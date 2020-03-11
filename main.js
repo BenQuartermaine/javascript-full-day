@@ -3,9 +3,14 @@ const list = document.querySelector('#results');
 const insertMovies = (data) => {
   console.log(data)
   data.Search.forEach((result) => {
-    const movie = `<div class="card">
-          <img src="${result.Poster}" />
-          <p>${result.Title}</p>
+    const movie = `<div class="card-movie">
+          <div class="image-top">
+            <img height="100%" src="${result.Poster}" />
+          </div>
+          <div class="content">
+            <p>${result.Year}</p>
+            <h5>${result.Title}</h5>
+          </div>
       </div>`;
     list.insertAdjacentHTML('beforeend', movie);
   });
